@@ -1,4 +1,4 @@
-# temp ftp
+#temp ftp
 alias http-here='echo http://$(hostname -i | cut -d" " -f 1):1337 && 
 python -m http.server 1337'
 
@@ -10,7 +10,7 @@ alias public='cd ~/dev/public'
 alias work='cd ~/dev/work'
 
 # colour
-alias ls='ls --color=auto'
+alias ls='ls -G'
 alias ll='ls -alF'
 
 # git
