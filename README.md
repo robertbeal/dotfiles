@@ -14,6 +14,9 @@ GNU `stow` for managing symlinks and `git` for source control. Simple!
 git checkout git@github.com:robertbeal/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
 
+## If you are installing vim plugins you will need to install a vim package manager
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
 stow [folder-names]
 stow bash hyper npm shell tmux vim zsh
 ```
