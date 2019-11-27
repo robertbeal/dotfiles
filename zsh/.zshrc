@@ -26,7 +26,9 @@ gpgconf --launch gpg-agent
 source ~/.sh_aliases
 source ~/.sh_functions
 source ~/.zsh_plugins
-source ~/.sh_work
+
+# What is sh_work?
+#source ~/.sh_work
 
 ### completions
 if [ ! -f "/usr/share/zsh/site-functions/_gopass" ]; then
