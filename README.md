@@ -11,7 +11,7 @@ GNU `stow` for managing symlinks and `git` for source control. Simple!
 ## apply
 
 ```bash
-git checkout git@github.com:robertbeal/dotfiles.git ~/.dotfiles
+git clone git@github.com:robertbeal/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
 
 ## If you are installing vim plugins you will need to install a vim package manager
