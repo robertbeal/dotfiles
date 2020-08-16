@@ -4,7 +4,7 @@ iplayer() {
 }
 
 decrypt-image() {
-  pass show $1 | base64 -d | display
+  gopass show $1 | base64 -d | display
 }
 
 port-in-use() {
