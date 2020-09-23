@@ -62,6 +62,9 @@ kubectl() {
     command kubectl "$@"
 }
 
+### docker
+export DOCKER_CLI_EXPERIMENTAL=enabled
+
 kops() {
     if ! type __start_kops >/dev/null 2>&1; then
         source <(command kops completion zsh)
