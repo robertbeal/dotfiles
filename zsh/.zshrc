@@ -46,6 +46,7 @@ setopt incappendhistory
 ### python
 if [ -x "$(command -v pyenv)" ]; then
     eval "$(pyenv init -)"
+    export PIPENV_VENV_IN_PROJECT="enabled"
 fi
 
 ### node
