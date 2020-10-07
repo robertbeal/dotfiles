@@ -52,6 +52,7 @@ fi
 ### node
 if [ -x "$(command -v fnm)" ]; then
     eval "$(fnm env --multi)"
+    source <(npm completion)
 fi
 
 ### lazy loading completions
