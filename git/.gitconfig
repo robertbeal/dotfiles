@@ -1,12 +1,9 @@
-[user]
-name = Rob Beal
-
 [commit]
 gpgsign = true
 
-[includeIf "gitdir:~/.dotfiles"]
+[includeIf "gitdir:~/.dotfiles/"]
 path = .gitconfig-personal
-[includeIf "gitdir:~/.dotfiles-private"]
+[includeIf "gitdir:~/.dotfiles-private/"]
 path = .gitconfig-personal
 [includeIf "gitdir:~/dev/personal/**"]
 path = .gitconfig-personal
