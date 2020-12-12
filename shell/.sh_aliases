@@ -1,36 +1,16 @@
-# temp ftp
-alias http-here='echo http://$(hostname -i | cut -d" " -f 1):1337 && 
-python -m http.server 1337'
-
 # folders
 alias ..='cd ..'
 alias ...='cd ../../'
 alias personal='cd ~/dev/personal'
-alias public='cd ~/dev/public'
 alias work='cd ~/dev/work'
 
 # colour
 alias ls='ls --color=auto'
 alias ll='ls -alF'
 
-# git
-alias g='git'
-alias gc='git commit'
-alias grh='git reset --hard'
-alias gp='git push'
-alias gs='git status'
-alias gpr='git pull --rebase'
-
 # apps
 alias vsc='code .'
 alias zshrc='code ~/.zshrc'
-
-# kubectl
-alias k='kubectl'
-alias kcuc='kubectl config use-context'
-alias kcsc='kubectl config set-context'
-alias kcdc='kubectl config delete-context'
-alias kccc='kubectl config current-context'
 
 if [[ $(uname) == "Darwin" ]]; then
     alias restart='sudo systemsetup -setrestartfreeze on'
@@ -38,9 +18,6 @@ if [[ $(uname) == "Darwin" ]]; then
 fi
 
 if [[ $(uname) == "Linux" ]]; then
-    # cinnamon
-    alias cinnamon-restart='nohup cinnamon --replace > /dev/null 2>&1 &'
-
     # pacman
     alias install='sudo pacman -S'
     alias remove='sudo pacman -R'
@@ -51,6 +28,4 @@ if [[ $(uname) == "Linux" ]]; then
 
     # user
     alias logout='kill -9 -1'
-
-    alias rga='sudo /usr/lib/systemd/system-sleep/gpg-agent.sh'
 fi

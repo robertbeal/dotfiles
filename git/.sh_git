@@ -1,0 +1,8 @@
+#!/bin/sh
+
+alias g='git'
+alias gc='git commit'
+alias grh='git reset --hard'
+alias gp='git push'
+alias gs='git status'
+alias gpr='git pull --rebase'

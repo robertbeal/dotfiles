@@ -1,0 +1,9 @@
+#!/bin/sh
+
+if [ -x "$(command -v pyenv)" ]; then
+    eval "$(pyenv init -)"
+    export PIPENV_VENV_IN_PROJECT="enabled"
+fi
+
+alias http-here='echo http://$(hostname -i | cut -d" " -f 1):1337 && 
+python -m http.server 1337'
