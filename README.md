@@ -20,7 +20,7 @@ git checkout git@github.com:robertbeal/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
 
 stow [folder-names]
-stow bash docker git hyper kubernetes node python shell spaceship tmux vim zsh
+stow bash docker git gpg hyper kubernetes node python shell spaceship tmux vim zsh
 ```
 
 To overwrite pre-existing files:
