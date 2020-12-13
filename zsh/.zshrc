@@ -19,11 +19,6 @@ compinit -C
 ### load completions after autoload
 source ~/.zsh_completions.zsh
 
-### gpg / yubikey
-export GPG_TTY="$(tty)"
-export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
-gpgconf --launch gpg-agent
-
 ### key bindings
 bindkey "${terminfo[khome]}" beginning-of-line
 bindkey "${terminfo[kend]}" end-of-line
