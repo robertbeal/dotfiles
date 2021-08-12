@@ -48,7 +48,6 @@ setopt incappendhistory
 for file in ~/.sh_*; do source $file; done
 
 source ~/.zsh_plugins
-source ~/.zsh_spaceship.zsh
 
 ### uncategorised
 iplayer() {
@@ -60,6 +59,8 @@ decrypt-image() {
 port-in-use() {
   lsof -i :$1
 }
+
+eval "$(starship init zsh)"
 
 # profiler
 #zprof
