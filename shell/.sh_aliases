@@ -5,7 +5,6 @@ alias personal='cd ~/dev/personal'
 alias work='cd ~/dev/work'
 
 # colour
-alias ls='ls --color=auto'
 alias ll='ls -alF'
 
 # apps
