@@ -10,6 +10,7 @@ alias ll='ls -alF'
 # apps
 alias vsc='code .'
 alias zshrc='code ~/.zshrc'
+alias awsume='. awsume'
 
 if [[ $(uname) == "Darwin" ]]; then
     alias restart='sudo systemsetup -setrestartfreeze on'
