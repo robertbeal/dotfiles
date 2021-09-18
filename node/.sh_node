@@ -13,7 +13,7 @@ if [ -x "$(command -v fnm)" ]; then
 fi
 
 node_version() {
-    if [ -f "$(pwd)/.node-version" || -f "$(pwd)/.nvmrc" ]; then
+    if [[ -f "$(pwd)/.node-version" || -f "$(pwd)/.nvmrc" ]]; then
         fnm use
     fi
 }
