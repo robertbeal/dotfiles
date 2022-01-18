@@ -2,7 +2,7 @@
 
 GNU `stow` for managing symlinks and `git` for source control. Simple!
 
-Mosty orientated to `zsh` with `antibody` as the shell plugin manager.
+Mostly orientated to `zsh` with `antibody` as the shell plugin manager.
 
 ## install
 
