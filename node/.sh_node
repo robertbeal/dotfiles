@@ -1,19 +1,11 @@
 #!/bin/bash
 
-autoload -U add-zsh-hook
-add-zsh-hook chpwd node_version
-node_version() {
-    if [[ -f "$(pwd)/.node-version" || -f "$(pwd)/.nvmrc" ]]; then
-        fnm use
-    fi
-}
-
 PATH="$HOME/.npm-global/bin:$PATH"
 PATH="./node_modules/.bin:$PATH"
 export PATH
 
 if [ -x "$(command -v fnm)" ]; then
-    eval "$(fnm env)"
+    eval "$(fnm env --use-on-cd)"
     source <(npm completion)
 fi
 
