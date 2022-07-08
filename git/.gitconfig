@@ -15,7 +15,7 @@ path = .gitconfig-personal
 
 [includeIf "gitdir:~/dev/work/**"]
 path = .gitconfig-work
-[includeIf "gitdir:~/.password-store-landtech/"]
+[includeIf "gitdir:~/.landtech/"]
 path = .gitconfig-work
 
 [alias]
