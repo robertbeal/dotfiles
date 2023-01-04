@@ -10,10 +10,6 @@ path = .gitconfig-personal
 [includeIf "gitdir:~/dev/public/**"]
 path = .gitconfig-personal
 
-
-[includeIf "gitdir:~/dev/work/**"]
-path = .gitconfig-work
-
 [alias]
 all = add -A
 st = status
