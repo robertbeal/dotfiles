@@ -9,13 +9,9 @@ path = .gitconfig-personal
 path = .gitconfig-personal
 [includeIf "gitdir:~/dev/public/**"]
 path = .gitconfig-personal
-[includeIf "gitdir:~/.password-store/"]
-path = .gitconfig-personal
 
 
 [includeIf "gitdir:~/dev/work/**"]
-path = .gitconfig-work
-[includeIf "gitdir:~/.password-store-landtech/"]
 path = .gitconfig-work
 
 [alias]
