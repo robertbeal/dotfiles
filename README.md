@@ -16,7 +16,7 @@ sudo apt install -y stow
 ## apply
 
 ```bash
-git checkout git@github.com:robertbeal/dotfiles.git ~/.dotfiles
+git clone git@github.com:robertbeal/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
 
 stow [folder-names]
