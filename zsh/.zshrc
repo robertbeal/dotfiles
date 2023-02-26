@@ -3,6 +3,8 @@
 # profiler
 #zmodload zsh/zprof
 
+export PATH=/opt/homebrew/bin:$PATH
+
 ### plugin manager
 antibody bundle <~/.zsh_plugins.txt >~/.zsh_plugins
 
