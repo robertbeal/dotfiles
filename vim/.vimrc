@@ -3,17 +3,17 @@ filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/vundle.vim
-call vundle#begin()
+" call vundle#begin()
 
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'ctrlp.vim'
-Plugin 'supertab'
-Plugin 'syntastic'
-Plugin 'nerdtree'
-Plugin 'editorconfig-vim'
-Plugin 'wookiehangover/jshint.vim'
+" Plugin 'VundleVim/Vundle.vim'
+" Plugin 'ctrlp.vim'
+" Plugin 'supertab'
+" Plugin 'syntastic'
+" Plugin 'nerdtree'
+" Plugin 'editorconfig-vim'
+" Plugin 'wookiehangover/jshint.vim'
 
-call vundle#end()            " required
+" call vundle#end()            " required
 filetype plugin indent on    " required
 "
 " Brief help

@@ -9,3 +9,14 @@ if [ -x "$(command -v fnm)" ]; then
     source <(npm completion)
 fi
 
+autoload -U add-zsh-hook
+add-zsh-hook -Uz chpwd set_node_version
+
+set_node_version() {
+    if [ -f "serverless.yml" ]; then
+        # get node version from serverless.yml
+        version=$(yq .provider.runtime serverless.yml)
+        # bash substitute (remove) "nodejs" from value. fnm use the output
+        fnm use "${version#"nodejs"}"
+    fi
+}
