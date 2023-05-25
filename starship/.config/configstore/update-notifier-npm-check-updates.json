@@ -1,0 +1,10 @@
+{
+	"optOut": false,
+	"lastUpdateCheck": 1685054737989,
+	"update": {
+		"latest": "16.10.12",
+		"current": "16.8.0",
+		"type": "minor",
+		"name": "npm-check-updates"
+	}
+}
