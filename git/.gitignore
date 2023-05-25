@@ -1,1 +1,10 @@
+# mac
 .DS_Store
+
+# editors
+.vscode
+
+# node 
+node_modules
+coverage
+.serverless
