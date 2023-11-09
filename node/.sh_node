@@ -14,9 +14,10 @@ add-zsh-hook -Uz chpwd set_node_version
 
 set_node_version() {
     if [ -f "serverless.yml" ]; then
-        # get node version from serverless.yml
-        version=$(yq .provider.runtime serverless.yml)
-        # bash substitute (remove) "nodejs" from value. fnm use the output
-        fnm use "${version#"nodejs"}"
+        version=$(yq -r '.provider.runtime // "" | select(test("^nodejs")) | sub("nodejs"; "")' serverless.yml)
+
+        if [ -n "$version" ]; then
+            fnm use "$version"
+        fi
     fi
 }
