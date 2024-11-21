@@ -11,6 +11,7 @@ fi
 
 autoload -U add-zsh-hook
 add-zsh-hook -Uz chpwd set_node_version
+add-zsh-hook -Uz chpwd set_jest
 
 set_node_version() {
     if [ -f "serverless.yml" ]; then
@@ -19,5 +20,13 @@ set_node_version() {
         if [ -n "$version" ]; then
             fnm use "$version"
         fi
+    fi
+}
+
+set_jest() {
+    if jq -e '.type == "module"' package.json > /dev/null 2>&1; then
+        alias jest="node --experimental-vm-modules node_modules/jest/bin/jest.js"
+    else
+        unalias jest 2>/dev/null || true
     fi
 }
