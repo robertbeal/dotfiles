@@ -14,3 +14,9 @@ zstyle ':completion:*' rehash true
 
 # menu if nb items > 2
 zstyle ':completion:*' menu select=2
+
+# case-insensitive (all), partial-word and then substring completion
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
+
+# group results by category
+zstyle ':completion:*' group-name ''

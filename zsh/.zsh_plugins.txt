@@ -1,8 +1,5 @@
-robbyrussell/oh-my-zsh path:plugins/aws
 robbyrussell/oh-my-zsh path:plugins/gpg-agent
 
-Tarrasch/zsh-bd
-
 zsh-users/zsh-completions
-zsh-users/zsh-autosuggestions branch:develop
+zsh-users/zsh-autosuggestions
 zsh-users/zsh-syntax-highlighting

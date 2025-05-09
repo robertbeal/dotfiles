@@ -3,19 +3,20 @@
 # profiler
 #zmodload zsh/zprof
 
-export PATH=/opt/homebrew/bin:$PATH
+# local bin folders
+export PATH="/opt/homebrew/bin:$HOME/.local/bin:$HOME/.bin:$PATH"
+export PATH
 
 ### plugin manager
-antibody bundle <~/.zsh_plugins.txt >~/.zsh_plugins
+if [[ ~/.zsh_plugins.txt -nt ~/.zsh_plugins ]]; then
+  antibody bundle <~/.zsh_plugins.txt >~/.zsh_plugins
+fi
 
 ### oh-my-zsh plugins dependencies / requirements
 export ZSH_CACHE_DIR=~/.zsh/cache
 mkdir -p $ZSH_CACHE_DIR
 
 autoload -Uz compinit
-for dump in ~/.zcompdump(N.mh+24); do
-    compinit
-done
 compinit -C
 
 ### load completions after autoload
@@ -32,11 +33,6 @@ bindkey '^R' history-incremental-search-backward
 export EDITOR="vim"
 export VEDITOR="code"
 export CLICOLOR=YES
-
-### bin folders
-PATH="$HOME/.bin:$PATH"
-PATH="$HOME/.local/bin:$PATH"
-export PATH
 
 ### history
 HISTFILE=~/.zsh_history
@@ -55,14 +51,18 @@ source ~/.zsh_plugins
 iplayer() {
   get_iplayer $1 --pid-recursive --force --output ~/Radio/
 }
-decrypt-image() {
-  gopass show $1 | base64 -d | display
-}
 port-in-use() {
   lsof -i :$1
 }
 
 eval "$(starship init zsh)"
+
+# fnm
+FNM_PATH="/home/rob/.local/share/fnm"
+if [ -d "$FNM_PATH" ]; then
+  export PATH="/home/rob/.local/share/fnm:$PATH"
+  eval "`fnm env`"
+fi
 
 # profiler
 #zprof
