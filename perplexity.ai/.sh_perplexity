@@ -1,5 +1,21 @@
 #!/usr/bin/env bash
+
 function p() {
+	if [ -z "$PERPLEXITY_API" ]; then
+		echo "Error: PERPLEXITY_API environment variable is not set"
+		return 1
+	fi
+
+	if ! command -v jq >/dev/null 2>&1; then
+		echo "Error: jq is not installed"
+		return 1
+	fi
+
+	if ! command -v curl >/dev/null 2>&1; then
+		echo "Error: curl is not installed"
+		return 1
+	fi
+
 	jq -n \
 		--arg content "$*" \
 		'{
