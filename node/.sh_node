@@ -4,16 +4,14 @@ PATH="$HOME/.npm-global/bin:$PATH"
 PATH="./node_modules/.bin:$PATH"
 export PATH
 
-if [ -x "$(command -v fnm)" ]; then
-    eval "$(fnm env --use-on-cd)"
-    source <(npm completion)
+if command -v fnm >/dev/null 2>&1; then
+  source <(fnm env --use-on-cd)
+  source <(npm completion)
 fi
 
 autoload -U add-zsh-hook
-add-zsh-hook -Uz chpwd set_node_version
-add-zsh-hook -Uz chpwd set_jest
 
-set_node_version() {
+set_node_version_from_serverless() {
     if [ -f "serverless.yml" ]; then
         version=$(yq -r '.provider.runtime // "" | select(test("^nodejs")) | sub("nodejs"; "")' serverless.yml)
 
@@ -23,6 +21,9 @@ set_node_version() {
     fi
 }
 
+add-zsh-hook chpwd set_node_version_from_serverless
+set_node_version_from_serverless
+
 set_jest() {
     if jq -e '.type == "module"' package.json > /dev/null 2>&1; then
         alias jest="node --experimental-vm-modules node_modules/jest/bin/jest.js"
@@ -30,3 +31,6 @@ set_jest() {
         unalias jest 2>/dev/null || true
     fi
 }
+
+add-zsh-hook chpwd set_jest
+set_jest

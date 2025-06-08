@@ -1,13 +1,7 @@
 #!/bin/sh
 
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/shims:$PATH"
-
-if [ -x "$(command -v pyenv)" ]; then
-    eval "$(pyenv init -)"
-    eval "$(pyenv virtualenv-init -)"
-    export PIPENV_VENV_IN_PROJECT="enabled"
+if command -v pyenv >/dev/null 2>&1; then
+  export PYENV_ROOT="$HOME/.pyenv"
+  export PATH="$PYENV_ROOT/bin:$PATH"
+  source <(pyenv init -)
 fi
-
-alias http-here='echo http://$(hostname -i | cut -d" " -f 1):1337 && 
-python -m http.server 1337'

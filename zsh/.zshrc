@@ -20,7 +20,7 @@ autoload -Uz compinit
 compinit -C
 
 ### load completions after autoload
-source ~/.zsh_completions.zsh
+#source ~/.zsh_completions.zsh
 
 ### key bindings
 bindkey "${terminfo[khome]}" beginning-of-line
@@ -56,13 +56,6 @@ port-in-use() {
 }
 
 eval "$(starship init zsh)"
-
-# fnm
-FNM_PATH="/home/rob/.local/share/fnm"
-if [ -d "$FNM_PATH" ]; then
-  export PATH="/home/rob/.local/share/fnm:$PATH"
-  eval "`fnm env`"
-fi
 
 # profiler
 #zprof
