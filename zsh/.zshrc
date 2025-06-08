@@ -20,7 +20,7 @@ autoload -Uz compinit
 compinit -C
 
 ### load completions after autoload
-#source ~/.zsh_completions.zsh
+source ~/.zsh_completions.zsh
 
 ### key bindings
 bindkey "${terminfo[khome]}" beginning-of-line
