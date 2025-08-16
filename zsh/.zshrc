@@ -1,11 +1,10 @@
-#!/bin/bash
+#!/bin/zsh
 
 # profiler
 #zmodload zsh/zprof
 
-# local bin folders
+### local bin folders
 export PATH="/opt/homebrew/bin:$HOME/.local/bin:$HOME/.bin:$PATH"
-export PATH
 
 ### plugin manager
 if [[ ~/.zsh_plugins.txt -nt ~/.zsh_plugins ]]; then
@@ -37,16 +36,37 @@ export CLICOLOR=YES
 
 ### history
 HISTFILE=~/.zsh_history
-HISTSIZE=1000
-SAVEHIST=1000
+HISTSIZE=10000
+SAVEHIST=10000
+setopt hist_ignore_dups
+setopt hist_ignore_space
 setopt appendhistory
 setopt share_history
 setopt incappendhistory
+setopt hist_verify
+setopt auto_cd
+setopt extended_glob
+setopt nomatch
+setopt notify
 
 ### source all settings
-for file in ~/.sh_*; do source $file; done
+# Array of shell configuration files to source
+files=(
+  ~/.sh_aliases
+  ~/.sh_docker
+  ~/.sh_git
+  ~/.sh_gpg
+  ~/.sh_kubernetes
+  ~/.sh_node
+  ~/.sh_perplexity
+  ~/.sh_python
+  ~/.sh_work
+)
 
-source ~/.zsh_plugins
+# Source each file if it exists
+for file in $files; do
+  [[ -f $file ]] && source $file
+done
 
 ### uncategorised
 iplayer() {
