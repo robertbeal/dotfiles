@@ -7,9 +7,9 @@
 export PATH="/opt/homebrew/bin:$HOME/.local/bin:$HOME/.bin:$PATH"
 
 ### plugin manager
-if [[ ~/.zsh_plugins.txt -nt ~/.zsh_plugins ]]; then
+if [[ -f ~/.zsh_plugins.txt ]]; then
   source $HOME/.antidote/antidote.zsh
-  antidote load
+  antidote load $HOME/.zsh_plugins.txt
 fi
 
 ### oh-my-zsh plugins dependencies / requirements
