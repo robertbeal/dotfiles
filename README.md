@@ -2,7 +2,7 @@
 
 GNU `stow` for managing symlinks and `git` for source control. Simple!
 
-Mostly orientated to `zsh` with `antibody` as the shell plugin manager.
+Mostly orientated to `zsh` with [`antidote`](https://antidote.sh/) as the shell plugin manager.
 
 ## install
 
@@ -12,6 +12,10 @@ sudo pacman -S stow
 sudo apt install -y stow
 ...etc
 ```
+```
+# See https://antidote.sh/install for install instructions
+```
+
 
 ## apply
 
