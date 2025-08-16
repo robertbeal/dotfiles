@@ -9,7 +9,8 @@ export PATH
 
 ### plugin manager
 if [[ ~/.zsh_plugins.txt -nt ~/.zsh_plugins ]]; then
-  antibody bundle <~/.zsh_plugins.txt >~/.zsh_plugins
+  source $HOME/.antidote/antidote.zsh
+  antidote load
 fi
 
 ### oh-my-zsh plugins dependencies / requirements
