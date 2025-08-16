@@ -2,5 +2,5 @@ robbyrussell/oh-my-zsh path:plugins/gpg-agent
 
 zsh-users/zsh-completions
 zsh-users/zsh-autosuggestions
-
+    
 agkozak/zsh-z
