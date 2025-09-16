@@ -4,12 +4,17 @@
 #zmodload zsh/zprof
 
 ### local bin folders
-export PATH="/opt/homebrew/bin:$HOME/.local/bin:$HOME/.bin:$PATH"
+export PATH="/opt/homebrew/bin:$HOME/.local/bin:$HOME/.bin:$PATH:/home/linuxbrew/.linuxbrew/bin"
 
 ### plugin manager
 if [[ -f ~/.zsh_plugins.txt ]]; then
-  source $HOME/.antidote/antidote.zsh
-  antidote load $HOME/.zsh_plugins.txt
+  if [[ -f $(brew --prefix antidote)/share/antidote/antidote.zsh ]]; then
+    source $(brew --prefix antidote)/share/antidote/antidote.zsh
+  elif [[ -f $HOME/.antidote/antidote.zsh ]]; then
+    source $HOME/.antidote/antidote.zsh
+  fi
+
+  command -v antidote >/dev/null && antidote load $HOME/.zsh_plugins.txt
 fi
 
 ### oh-my-zsh plugins dependencies / requirements
