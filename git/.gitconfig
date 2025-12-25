@@ -1,12 +1,6 @@
-[includeIf "gitdir:~/.dotfiles/"]
+[includeIf "gitdir:~/**"]
 path = .gitconfig-personal
-[includeIf "gitdir:~/.dotfiles-private/"]
-path = .gitconfig-personal
-[includeIf "gitdir:~/dev/personal/**"]
-path = .gitconfig-personal
-[includeIf "gitdir:~/dev/public/**"]
-path = .gitconfig-personal
-[includeIf "gitdir:~/dev/work/**"]
+[includeIf "gitdir:~/dev/work/"]
 path = .gitconfig-work
 
 [alias]
