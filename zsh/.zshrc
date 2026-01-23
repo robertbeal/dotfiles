@@ -85,3 +85,10 @@ eval "$(starship init zsh)"
 
 # profiler
 #zprof
+
+# fnm
+FNM_PATH="/var/home/rob/.local/share/fnm"
+if [ -d "$FNM_PATH" ]; then
+  export PATH="$FNM_PATH:$PATH"
+  eval "`fnm env`"
+fi

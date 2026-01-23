@@ -24,7 +24,7 @@ git clone git@github.com:robertbeal/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
 
 stow [folder-names]
-stow bash docker git gpg hyper kubernetes node python shell starship tmux vim zsh
+stow bash fish git starship tmux vim zsh
 ```
 
 To overwrite pre-existing files:
