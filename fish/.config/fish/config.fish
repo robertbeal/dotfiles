@@ -1,6 +1,8 @@
 if status is-interactive
 end
 
+set fish_greeting
+
 starship init fish | source
 
 # path
@@ -34,9 +36,9 @@ end
 
 function set_node_version_from_serverless
   if test -f serverless.yml
-    set version (yq -r '.provider.runtime // "" | select(test("^nodejs")) | sub("nodejs"; "")' serverless.yml 2>/dev/null)
-    if test -n "$version" -a "$version" != "null"
-      fnm use "$version"
+    set node_version (yq -r '.provider.runtime // "" | select(test("^nodejs")) | sub("nodejs"; "")' serverless.yml 2>/dev/null)
+    if test -n "$node_version" -a "$node_version" != "null"
+      fnm use "$node_version"
     end
   end
 end

@@ -1,0 +1,4 @@
+# This file contains fish universal variable definitions.
+# VERSION: 3.0
+SETUVAR __fish_initialized:4300
+SETUVAR fish_user_paths:/Users/rob/dev/work/yoto\x2dclub\x2dapi/node_modules/\x2ebin\x1e/Users/rob/dev/work/yoto\x2dcard\x2dapi/node_modules/\x2ebin\x1e/opt/homebrew/bin\x1e/Users/rob/\x2elocal/bin
