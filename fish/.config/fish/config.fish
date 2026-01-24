@@ -1,9 +1,7 @@
 if status is-interactive
+    set fish_greeting
+    starship init fish | source
 end
-
-set fish_greeting
-
-starship init fish | source
 
 # path
 ######
@@ -26,8 +24,7 @@ gpgconf --launch gpg-agent
 
 # node
 ######
-fish_add_path $HOME/.npm-global/bin
-fish_add_path ./node_modules/.bin
+fish_add_path $HOME/.npm-global/bin ./node_modules/.bin
 
 if command -q fnm
   fnm env --use-on-cd | source
@@ -35,12 +32,9 @@ if command -q fnm
 end
 
 function set_node_version_from_serverless
-  if test -f serverless.yml
-    set node_version (yq -r '.provider.runtime // "" | select(test("^nodejs")) | sub("nodejs"; "")' serverless.yml 2>/dev/null)
-    if test -n "$node_version" -a "$node_version" != "null"
-      fnm use "$node_version"
-    end
-  end
+  test -f serverless.yml || return
+  set node_version (yq -r '.provider.runtime // "" | select(test("^nodejs")) | sub("nodejs"; "")' serverless.yml 2>/dev/null)
+  test -n "$node_version" -a "$node_version" != "null" && fnm use "$node_version"
 end
 
 # python
@@ -70,12 +64,12 @@ abbr -a ll 'ls -alF'
 abbr -a vsc  'code .'
 
 ## git
-function g    -e git; git $argv; end
-function gc   -e git; git commit $argv; end  
-function grh  -e git; git reset --hard $argv; end
-function gp   -e git; git push $argv; end
-function gs   -e git; git status $argv; end
-function gpr  -e git; git pull --rebase $argv; end
+function g    -w git; git $argv; end
+function gc   -w git; git commit $argv; end
+function grh  -w git; git reset --hard $argv; end
+function gp   -w git; git push $argv; end
+function gs   -w git; git status $argv; end
+function gpr  -w git; git pull --rebase $argv; end
 
 ## mac
 abbr -a rga    '~/.wakeup'
