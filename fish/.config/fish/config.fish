@@ -60,8 +60,16 @@ abbr -a ...      'cd ../..'
 abbr -a personal 'cd ~/dev/personal'
 abbr -a work     'cd ~/dev/work'
 
+## system
 abbr -a ll 'ls -alF'
-abbr -a vsc  'code .'
+
+function ch -d "Command history"
+  history | fzf --preview='echo {}' | xargs -I {} fish -c "{}"
+end
+
+function ev -d "Browse env vars"
+  env | fzf --preview='echo ${}'
+end
 
 ## git
 function g    -w git; git $argv; end
@@ -70,6 +78,14 @@ function grh  -w git; git reset --hard $argv; end
 function gp   -w git; git push $argv; end
 function gs   -w git; git status $argv; end
 function gpr  -w git; git pull --rebase $argv; end
+
+function gb -d "Switch git branch"
+  git branch | fzf | xargs git checkout
+end
+
+function gl -d "Git log browser"
+  git log --oneline | fzf --preview='git show --color=always {1}'
+end
 
 ## mac
 abbr -a rga    '~/.wakeup'
