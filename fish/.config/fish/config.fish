@@ -64,27 +64,28 @@ abbr -a work     'cd ~/dev/work'
 abbr -a ll 'ls -alF'
 
 function ch -d "Command history"
-  history | fzf --preview='echo {}' | xargs -I {} fish -c "{}"
+  history | fzf --preview='echo {}' --preview-window=up:3:wrap | read -l cmd && commandline -r $cmd
 end
 
+
 function ev -d "Browse env vars"
-  env | fzf --preview='echo ${}'
+  env | fzf --preview='echo {}'
 end
 
 ## git
-function g    -w git; git $argv; end
-function gc   -w git; git commit $argv; end
-function grh  -w git; git reset --hard $argv; end
-function gp   -w git; git push $argv; end
-function gs   -w git; git status $argv; end
-function gpr  -w git; git pull --rebase $argv; end
+abbr -a g   'git'
+abbr -a gc  'git commit'
+abbr -a gp  'git push'
+abbr -a gs  'git status'
+abbr -a gpr 'git pull --rebase'
 
 function gb -d "Switch git branch"
-  git branch | fzf | xargs git checkout
+  git branch | string replace '* ' '' | string trim | fzf | xargs git checkout
 end
 
 function gl -d "Git log browser"
-  git log --oneline | fzf --preview='git show --color=always {1}'
+  git rev-parse --git-dir &>/dev/null || return 1
+  git log --oneline --color=always | fzf --ansi --preview='git show --color=always {1}'
 end
 
 ## mac
