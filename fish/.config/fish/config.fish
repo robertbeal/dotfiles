@@ -88,5 +88,11 @@ function gl -d "Git log browser"
   git log --oneline --color=always | fzf --ansi --preview='git show --color=always {1}'
 end
 
+# pnpm
+set -gx PNPM_HOME "/Users/rob/Library/pnpm"
+if not string match -q -- $PNPM_HOME $PATH
+  set -gx PATH "$PNPM_HOME" $PATH
+end
+
 ## mac
 abbr -a rga    '~/.wakeup'

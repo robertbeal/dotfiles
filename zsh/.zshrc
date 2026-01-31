@@ -24,9 +24,6 @@ mkdir -p $ZSH_CACHE_DIR
 autoload -Uz compinit
 compinit -C
 
-### load completions after autoload
-source ~/.zsh_completions.zsh
-
 ### key bindings
 bindkey "${terminfo[khome]}" beginning-of-line
 bindkey "${terminfo[kend]}" end-of-line
