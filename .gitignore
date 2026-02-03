@@ -1,3 +1,5 @@
 .DS_Store
 
 starship/.config
+
+secrets.fish

@@ -7,6 +7,12 @@ end
 ######
 fish_add_path /opt/homebrew/bin $HOME/.local/bin $HOME/.bin /home/linuxbrew/.linuxbrew/bin
 
+# secrets
+#########
+if test -f ~/.config/fish/secrets.fish
+    source ~/.config/fish/secrets.fish
+end
+
 # auto suggestions
 ##################
 if not functions -q fish_user_key_bindings
