@@ -2,4 +2,6 @@
 
 starship/.config
 
+# fish
 secrets.fish
+fish_variables
