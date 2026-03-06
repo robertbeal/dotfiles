@@ -1,4 +1,4 @@
-# dotfiles
+# dotfiles (deprecated)
 
 **DEPRECATED** - this repository has moved to: https://codeberg.org/kohiuk/dotfiles
 
