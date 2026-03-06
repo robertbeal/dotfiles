@@ -1,5 +1,7 @@
 # dotfiles
 
+**DEPRECATED** - this repository has moved to: https://codeberg.org/kohiuk/dotfiles
+
 GNU `stow` for managing symlinks and `git` for source control. Simple!
 
 Mostly orientated to `zsh` with [`antidote`](https://antidote.sh/) as the shell plugin manager.
